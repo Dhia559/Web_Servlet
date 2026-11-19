@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @WebServlet("/ShowSession")
 public class ShowSession extends HttpServlet {
@@ -59,6 +60,15 @@ public class ShowSession extends HttpServlet {
             response.getWriter().println("<h3>Hi , "+firstname+" there are "+days+" days to your birthday </h3>");
 
         }
+        var context = s.getServletContext();
+        AtomicInteger counter =
+                (AtomicInteger) context.getAttribute("activeSessions");
+        var count  = counter == null?  0 : counter.get();
+        response.getWriter().println(
+                "<h1>Active Sessions: " + count + "</h1>"
+        );
+
+        int count = counter == null ? 0 : counter.get();
 
     }
     @Override

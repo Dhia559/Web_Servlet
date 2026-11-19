@@ -33,7 +33,7 @@ public class ex1 extends HttpServlet {
         response.addCookie(c2);
         response.addCookie(c3);
         response.addCookie(c4);
-        response.setContentType("text/html; charset=UTF-8");
+            response.setContentType("text/html; charset=UTF-8");
 
         PrintWriter out = response.getWriter();
 
