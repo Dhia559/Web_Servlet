@@ -1,0 +1,7 @@
+est ce que on peut controler l ordre de filtre sans le web.xml avec les annotation 
+
+
+chain.doFilter(request, response);
+The message before this line prints before the servlet runs. The message after it prints when processing returns from the servlet, provided the chain completes normally.
+
+chain.doFilter(request, response) passes the request to the next filter, if there is one, or to the servlet if there are no more filters.

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+</head>
+<body>
+<h2>Formulaire d'inscription</h2>
+
+<form action="bean.jsp" method="post">
+
+    <label>First Name:</label><br>
+    <input type="text" name="firstName" required><br><br>
+
+    <label>Last Name:</label><br>
+    <input type="text" name="lastName" required><br><br>
+
+    <label>Birth Date (MM/DD/YYYY):</label><br>
+    <input type="text" name="birthDay"
+           placeholder="MM/DD/YYYY" required><br><br>
+
+    <label>Sex:</label>
+    <input type="radio" name="sex" value="male" required> Male
+    <input type="radio" name="sex" value="female"> Female
+    <br><br>
+
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
