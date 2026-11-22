@@ -5,6 +5,8 @@ import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;
 import jakarta.servlet.annotation.WebListener;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @WebListener
 public class ActiveSessionListener implements HttpSessionListener {
 
@@ -15,10 +17,11 @@ public class ActiveSessionListener implements HttpSessionListener {
 
         activeSessions++;
 
+
         ServletContext context = se.getSession()
                 .getServletContext();
 
-        context.setAttribute("activeSessions", activeSessions);
+        context.setAttribute("activeSessions", new AtomicInteger(activeSessions));;
 
         System.out.println("New session created. Active sessions: " + activeSessions);
     }

@@ -42,7 +42,7 @@ public class ShowSession extends HttpServlet {
                             break;
                     }
                 }
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
             LocalDate birthday = LocalDate.parse(br, formatter);
             LocalDate today = LocalDate.now();
@@ -68,7 +68,6 @@ public class ShowSession extends HttpServlet {
                 "<h1>Active Sessions: " + count + "</h1>"
         );
 
-        int count = counter == null ? 0 : counter.get();
 
     }
     @Override
